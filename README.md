@@ -3,6 +3,6 @@
 
 # My-sql 
 CREATE USER 'username'@'%' IDENTIFIED BY 'password78!';
-GRANT ALL PRIVILEGES ON *.* TO 'hijinbi'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'%';
 flush privileges;
 quit
