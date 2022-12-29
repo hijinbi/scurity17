@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pjb.config.auth.PrincipalDetails;
 import com.pjb.model.User;
 import com.pjb.repository.UserRepository;
 
@@ -27,7 +28,7 @@ public class IndexController {
 	}
 
 	@GetMapping("/user")
-	public @ResponseBody String user(@AuthenticationPrincipal AuthenticationPrincipal auth) {
+	public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails auth) {
 
 		return "유저 페이지입니다.";
 	}
@@ -39,7 +40,7 @@ public class IndexController {
 	
 	@Secured("ROLE_MANAGER")
 	@GetMapping("/manager")
-	public @ResponseBody String manager(@AuthenticationPrincipal AuthenticationPrincipal auth) {
+	public @ResponseBody String manager(@AuthenticationPrincipal PrincipalDetails auth) {
 		return "매니저 페이지입니다.";
 	}
 
@@ -68,5 +69,11 @@ public class IndexController {
 	@PostMapping("/loginProcess")
 	public String loginProcess() {
 		return "loginProcess";
+	}
+	
+	@GetMapping("/test")
+	public @ResponseBody String test(@AuthenticationPrincipal PrincipalDetails auth) {
+
+		return "유저 페이지입니다.";
 	}
 }

@@ -59,7 +59,7 @@ public class SecurityConfig {
 			.csrf(csrf -> csrf.disable())
 			.formLogin()
 			   .loginPage("/login")   			// 사용자 정의 로그인 페이지
-		       .defaultSuccessUrl("/admin")			// 로그인 성공 후 이동 페이지
+		       .defaultSuccessUrl("/")			// 로그인 성공 후 이동 페이지
 		       .failureUrl("/login.html?error=true")  // 로그인 실패 후 이동 페이지
 		       .loginProcessingUrl("/loginProcess")	
 		       // 로그인 Form Action Url
